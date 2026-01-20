@@ -104,7 +104,6 @@ public class JWTUtils {
         }
 
         throw new IllegalStateException(
-                "JWT secret is not configured. Please set bigtop-manager.security.jwt.secret (or enable allowDefaultSecret for dev only)."
-        );
+                "JWT secret is not configured. Please set bigtop-manager.security.jwt.secret (or enable allowDefaultSecret for dev only).");
     }
 }

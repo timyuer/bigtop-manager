@@ -59,7 +59,8 @@ public class JWTUtilsTest {
         DecodedJWT decodedJWT = jwtUtils.resolveToken(token);
         assertEquals(id, decodedJWT.getClaim(JWTUtils.CLAIM_ID).asLong());
         assertEquals(username, decodedJWT.getClaim(JWTUtils.CLAIM_USERNAME).asString());
-        assertEquals(tokenVersion, decodedJWT.getClaim(JWTUtils.CLAIM_TOKEN_VERSION).asInt());
+        assertEquals(
+                tokenVersion, decodedJWT.getClaim(JWTUtils.CLAIM_TOKEN_VERSION).asInt());
     }
 
     @Test

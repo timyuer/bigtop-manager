@@ -94,7 +94,8 @@ public class AuthInterceptor implements HandlerInterceptor {
         try {
             DecodedJWT decodedJWT = jwtUtils.resolveToken(token);
             Long userId = decodedJWT.getClaim(JWTUtils.CLAIM_ID).asLong();
-            Integer tokenVersion = decodedJWT.getClaim(JWTUtils.CLAIM_TOKEN_VERSION).asInt();
+            Integer tokenVersion =
+                    decodedJWT.getClaim(JWTUtils.CLAIM_TOKEN_VERSION).asInt();
 
             // Check if the user exists
             UserVO userVO = CacheUtils.getCache(Caches.CACHE_USER, userId.toString(), UserVO.class);
